@@ -211,13 +211,6 @@ projects:
 - [infused-kim/zmk-config](https://github.com/infused-kim/zmk-config)
 - [urob/zmk-config](https://github.com/urob/zmk-config)
 
-# MY OTHER PROJECTS:
-- [nice!oled](https://github.com/mctechnology17/zmk-nice-oled)
-- [dongle_display!view](https://github.com/mctechnology17/zmk-dongle-display-view)
-- [oled_adapter](https://github.com/mctechnology17/zmk-oled-adapter)
-- [vimtools](https://github.com/mctechnology17/vimtools)
-- [gm](https://github.com/mctechnology17/gm)
-
 # RELATED PROJECTS
 - [zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display.git)
 - [zmk-config for module](https://github.com/englmaxi/zmk-config)

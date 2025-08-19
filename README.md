@@ -1,6 +1,3 @@
-Вот изменённый README, где удалены упоминания других клавиатур и оставлена только информация для Lily58:
-
-```markdown
 # MC Technology's zmk-config for lily58
 
 [![MC Technology](https://github.com/mctechnology17/mctechnology17/blob/main/src/mctechnology_extendido.GIF)](https://www.youtube.com/channel/UC_mYh5PYPHBJ5YYUj8AIkcw)

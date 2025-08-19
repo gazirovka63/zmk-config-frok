@@ -1,3 +1,6 @@
+Вот изменённый README, где удалены упоминания других клавиатур и оставлена только информация для Lily58:
+
+```markdown
 # MC Technology's zmk-config for lily58
 
 [![MC Technology](https://github.com/mctechnology17/mctechnology17/blob/main/src/mctechnology_extendido.GIF)](https://www.youtube.com/channel/UC_mYh5PYPHBJ5YYUj8AIkcw)
@@ -134,3 +137,114 @@ the need to configure anything else. You just have to follow the steps below:
    ```bash
    git clone https://github.com/mctechnology17/zmk-config.git
    cd zmk-config
+   ```
+
+2. To compile with make, run:
+   ```bash
+   make codebase_urob
+   make lily58_urob
+   ```
+
+# DISPLAY
+1. ePAPER ([nice-view])
+2. OLED (SSD1306 / sh1107 / sh1106)
+3. FULL COLOR LCD SCREEN ([Prospector](https://github.com/carrefinho/prospector))
+
+> [!IMPORTANT]
+>
+> To modify the dongle's OLED screen you can modify the `.overlay` files for your specific board.
+
+# RGB
+> [!WARNING]
+>
+> If you use [nice-view] you cannot use rgb, since [nice-view] uses the same
+> pinout as rgb.
+
+# DONGLE
+You can connect a display to the dongle. See connection diagrams for:
+- [seeeduino_xiao_ble](./src/pinout-seeeduino_xiao_ble.png)
+- [pro_micro](./src/pinout-pro_micro.png)
+
+Combo example to enter bootloader mode:
+```c
+COMBO(combo_bootloader, &bootloader, 0 1 2, 0)
+```
+
+# USEFUL TIPS
+- Add reset keys on each half
+- Add bootloader activators
+- If halves desynchronize, press reset buttons 10 times
+- To reflash: connect half, press reset button twice, drag firmware file
+- Combine different boards (left nice_nano_v2, right puchi_ble_v1, etc.)
+
+# ZMK STUDIO
+- Enable `&studio_unlock` macro or `CONFIG_ZMK_STUDIO_LOCKING=n`
+- Activate on master and dongle: `snippet: studio-rpc-usb-uart`
+- USB connection for web, BLE for app
+
+# MODULE INTEGRATION
+Useful modules:
+- [nice_view_gem](https://github.com/M165437/nice-view-gem)
+- [nice_oled](https://github.com/mctechnology17/zmk-nice-oled)
+- [zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display)
+- [dongle_display!view](https://github.com/mctechnology17/zmk-dongle-display-view)
+- [oled Adapter](https://github.com/mctechnology17/zmk-oled-adapter)
+
+# THIS REPOSITORY AS A MODULE
+1. In `config/west.yml` add:
+```yaml
+remotes:
+  - name: mctechnology17
+    url-base: https://github.com/mctechnology17
+projects:
+  - name: zmk-config
+    remote: mctechnology17
+    revision: main
+```
+
+2. In `build.yaml` add lily58 shields
+
+3. Build and flash firmware
+
+# INSPIRATIONS
+- [englmaxi/zmk-config](https://github.com/englmaxi/zmk-config)
+- [caksoylar/zmk-config](https://github.com/caksoylar/zmk-config)
+- [joelspadin/zmk-locale-generator](https://github.com/joelspadin/zmk-locale-generator)
+- [minusfive/zmk-config](https://github.com/minusfive/zmk-config)
+- [infused-kim/zmk-config](https://github.com/infused-kim/zmk-config)
+- [urob/zmk-config](https://github.com/urob/zmk-config)
+
+# MY OTHER PROJECTS:
+- [nice!oled](https://github.com/mctechnology17/zmk-nice-oled)
+- [dongle_display!view](https://github.com/mctechnology17/zmk-dongle-display-view)
+- [oled_adapter](https://github.com/mctechnology17/zmk-oled-adapter)
+- [vimtools](https://github.com/mctechnology17/vimtools)
+- [gm](https://github.com/mctechnology17/gm)
+
+# RELATED PROJECTS
+- [zmk-dongle-display](https://github.com/englmaxi/zmk-dongle-display.git)
+- [zmk-config for module](https://github.com/englmaxi/zmk-config)
+
+# DONGLE DESIGNS
+- [case1](https://github.com/englmaxi/zmk-dongle-display/raw/main/cases/case1.zip)
+- [case2](https://github.com/englmaxi/zmk-dongle-display/raw/main/cases/case2.zip)
+- [Dongle PCB](https://github.com/spe2/zmk_dongle_hardware)
+- [Macintosh](https://makerworld.com/en/models/403660)
+- [ZMK Display Dongle](https://makerworld.com/en/models/496738)
+
+# TODO
+- [ ] Add more features to the repository
+- [ ] Update the documentation
+
+[github]: https://github.com/mctechnology17
+[youtube]: https://www.youtube.com/c/mctechnology17
+[facebook]: https://m.facebook.com/mctechnology17/
+[reddit]: https://www.reddit.com/user/mctechnology17
+[nice-view]: https://nicekeyboards.com/nice-view
+[puchi_ble_v1]: https://keycapsss.com/keyboard-parts/mcu-controller/202/puchi-ble-wireless-microcontroller-pro-micro-replacement
+[seeeduino_xiao_ble]: https://keycapsss.com/keyboard-parts/mcu-controller/212/seeed-studio-xiao-nrf52840-rp2040-esp32c3
+[nice_nano_v2]: https://nicekeyboards.com/nice-nano
+[keymap-editor]: https://nickcoutsos.github.io/keymap-editor/
+[ZMK firmware]: https://github.com/zmkfirmware/zmk/
+[ZMK Discord]: https://zmk.dev/community/discord/invite
+```

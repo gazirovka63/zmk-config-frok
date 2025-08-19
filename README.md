@@ -247,4 +247,3 @@ projects:
 [keymap-editor]: https://nickcoutsos.github.io/keymap-editor/
 [ZMK firmware]: https://github.com/zmkfirmware/zmk/
 [ZMK Discord]: https://zmk.dev/community/discord/invite
-```

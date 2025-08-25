@@ -18,7 +18,7 @@ layers:
   - F12
   - F1
   - F2
-  - F3
+  - UP ARROW
   - F4
   - F5
   - F6
@@ -29,9 +29,9 @@ layers:
   - F11
   - F12
   - '`'
-  - '!'
-  - '@'
-  - '#'
+  - LEFT ARROW
+  - DOWN ARROW
+  - LEFT ARROW
   - $
   - '%'
   - ^
@@ -40,7 +40,7 @@ layers:
   - (
   - )
   - '~'
-  - {t: ▽, type: trans}
+  - ''
   - EP TOG
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
